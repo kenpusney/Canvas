@@ -54,3 +54,26 @@
 1356685898 /home/kpsn/workspace/codeblocks/Canvas/scalar.h
 	"object.h"
 
+1359618774 source:e:\workspace\s4x\canvas\test\main.cpp
+	<stdio.h>
+	"core.h"
+
+1359618774 e:\workspace\s4x\canvas\include\core.h
+	"object.h"
+	"interface.h"
+	"bool.h"
+	"scalar.h"
+
+1359618774 e:\workspace\s4x\canvas\include\object.h
+	"traits.h"
+
+1359618774 e:\workspace\s4x\canvas\include\traits.h
+
+1359618774 e:\workspace\s4x\canvas\include\interface.h
+
+1359618774 e:\workspace\s4x\canvas\include\bool.h
+	"object.h"
+
+1359618774 e:\workspace\s4x\canvas\include\scalar.h
+	"object.h"
+
