@@ -77,3 +77,35 @@
 1359618774 e:\workspace\s4x\canvas\include\scalar.h
 	"object.h"
 
+1364751409 source:c:\users\kim leo\documents\github\canvas\test\main.cpp
+	<stdio.h>
+	"core.h"
+
+1364747684 c:\users\kim leo\documents\github\canvas\include\core.h
+	"object.h"
+	"alloc.h"
+	"interface.h"
+	"bool.h"
+	"scalar.h"
+
+1364751609 c:\users\kim leo\documents\github\canvas\include\object.h
+	"traits.h"
+
+1364744938 c:\users\kim leo\documents\github\canvas\include\traits.h
+
+1364744923 c:\users\kim leo\documents\github\canvas\include\interface.h
+
+1364744918 c:\users\kim leo\documents\github\canvas\include\bool.h
+
+1364773903 c:\users\kim leo\documents\github\canvas\include\scalar.h
+
+1364751487 source:c:\users\kim leo\documents\github\canvas\src\object.cpp
+	"object.h"
+
+1364747741 source:c:\users\kim leo\documents\github\canvas\src\alloc.cpp
+	"alloc.h"
+
+1364749153 c:\users\kim leo\documents\github\canvas\include\alloc.h
+	<stdlib.h>
+	"object.h"
+

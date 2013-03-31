@@ -2,16 +2,14 @@
 #include <stdio.h>
 #include "core.h"
 
+using namespace Canvas;
+
 int main(){
-    Integer i,j;
-    Scalar<float> x = 1.0;
-    x++;
-    i = 1;
-    j = 2;
-    i = 'a'-i;
-    i = i+1;
-    i--;
-    ++i;
-    printf("%c",i.value());
+    Object i;
+    const Object j(i);
+    Ref<Object> m(i);
+    Ref<Object> n(j);
+    Scalar<int> integer(1);
+    printf("Object i id is %d\n\tj id is %d\n",(++integer)(),integer());
     return 0;
 }
