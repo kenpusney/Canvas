@@ -1,111 +1,39 @@
 # depslib dependency file v1.0
-1356679498 source:/home/kpsn/workspace/codeblocks/LongLongAgo/main.cpp
-	<stdio.h>
-	<typeinfo>
-	"core.h"
-
-1356589652 /home/kpsn/workspace/codeblocks/LongLongAgo/Object.h
-
-1356629119 /home/kpsn/workspace/codeblocks/LongLongAgo/core.h
-	"object.h"
-	"interface.h"
-	"bool.h"
-	"scalar.h"
-
-1356630231 /home/kpsn/workspace/codeblocks/LongLongAgo/object.h
-	"traits.h"
-
-1356590247 /home/kpsn/workspace/codeblocks/LongLongAgo/null.h
-	"object.h"
-
-1356590233 /home/kpsn/workspace/codeblocks/LongLongAgo/number.h
-	"object.h"
-
-1356679598 /home/kpsn/workspace/codeblocks/LongLongAgo/scalar.h
-	"object.h"
-
-1356628260 /home/kpsn/workspace/codeblocks/LongLongAgo/bool.h
-	"object.h"
-
-1356627189 /home/kpsn/workspace/codeblocks/LongLongAgo/traits.h
-
-1356679727 /home/kpsn/workspace/codeblocks/LongLongAgo/interface.h
-
-1356700797 source:/home/kpsn/workspace/codeblocks/Canvas/main.cpp
-	<stdio.h>
-	"core.h"
-
-1356700859 /home/kpsn/workspace/codeblocks/Canvas/core.h
-	"object.h"
-	"interface.h"
-	"bool.h"
-	"scalar.h"
-
-1356687459 /home/kpsn/workspace/codeblocks/Canvas/object.h
-	"traits.h"
-
-1356700909 /home/kpsn/workspace/codeblocks/Canvas/traits.h
-
-1356689184 /home/kpsn/workspace/codeblocks/Canvas/interface.h
-
-1356700866 /home/kpsn/workspace/codeblocks/Canvas/bool.h
-	"object.h"
-
-1356685898 /home/kpsn/workspace/codeblocks/Canvas/scalar.h
-	"object.h"
-
-1359618774 source:e:\workspace\s4x\canvas\test\main.cpp
-	<stdio.h>
-	"core.h"
-
-1359618774 e:\workspace\s4x\canvas\include\core.h
-	"object.h"
-	"interface.h"
-	"bool.h"
-	"scalar.h"
-
-1359618774 e:\workspace\s4x\canvas\include\object.h
-	"traits.h"
-
-1359618774 e:\workspace\s4x\canvas\include\traits.h
-
-1359618774 e:\workspace\s4x\canvas\include\interface.h
-
-1359618774 e:\workspace\s4x\canvas\include\bool.h
-	"object.h"
-
-1359618774 e:\workspace\s4x\canvas\include\scalar.h
-	"object.h"
-
-1364751409 source:c:\users\kim leo\documents\github\canvas\test\main.cpp
-	<stdio.h>
-	"core.h"
-
-1364747684 c:\users\kim leo\documents\github\canvas\include\core.h
-	"object.h"
+1364747741 source:c:\users\kim leo\documents\github\canvas\src\alloc.cpp
 	"alloc.h"
-	"interface.h"
-	"bool.h"
-	"scalar.h"
 
-1364751609 c:\users\kim leo\documents\github\canvas\include\object.h
-	"traits.h"
+1371286986 c:\users\kim leo\documents\github\canvas\include\alloc.h
+
+1371286929 c:\users\kim leo\documents\github\canvas\include\object.h
 
 1364744938 c:\users\kim leo\documents\github\canvas\include\traits.h
+
+1371286626 source:c:\users\kim leo\documents\github\canvas\src\object.cpp
+	"object.h"
+
+1371363476 source:c:\users\kim leo\documents\github\canvas\test\main.cpp
+	<cstdio>
+	<iostream>
+	"core.h"
+	<vector>
+
+1371345896 c:\users\kim leo\documents\github\canvas\include\core.h
+	"scalar.h"
+	"ranges.h"
 
 1364744923 c:\users\kim leo\documents\github\canvas\include\interface.h
 
 1364744918 c:\users\kim leo\documents\github\canvas\include\bool.h
 
-1364773903 c:\users\kim leo\documents\github\canvas\include\scalar.h
+1371363516 c:\users\kim leo\documents\github\canvas\include\scalar.h
+	<iostream>
+	<cmath>
 
-1364751487 source:c:\users\kim leo\documents\github\canvas\src\object.cpp
-	"object.h"
+1366628714 c:\users\kim leo\documents\github\canvas\include\ext.h
 
-1364747741 source:c:\users\kim leo\documents\github\canvas\src\alloc.cpp
-	"alloc.h"
-
-1364749153 c:\users\kim leo\documents\github\canvas\include\alloc.h
-	<stdlib.h>
-	"object.h"
+1371363094 c:\users\kim leo\documents\github\canvas\include\ranges.h
+	<string>
+	<sstream>
+	<vector>
+	<limits>
 

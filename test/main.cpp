@@ -1,15 +1,14 @@
 
-#include <stdio.h>
+#include <cstdio>
+#include <iostream>
 #include "core.h"
-
+#include <vector>
 using namespace Canvas;
+using namespace std;
 
 int main(){
-    Object i;
-    const Object j(i);
-    Ref<Object> m(i);
-    Ref<Object> n(j);
-    Scalar<int> integer(1);
-    printf("Object i id is %d\n\tj id is %d\n",(++integer)(),integer());
-    return 0;
+    /// for (auto i : xrange(Integer(8),Integer(-0),Integer(-2)))
+    ///    cout << i;
 }
+
+

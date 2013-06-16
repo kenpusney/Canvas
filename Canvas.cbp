@@ -27,8 +27,10 @@
 		<Unit filename="include/alloc.h" />
 		<Unit filename="include/bool.h" />
 		<Unit filename="include/core.h" />
+		<Unit filename="include/ext.h" />
 		<Unit filename="include/interface.h" />
 		<Unit filename="include/object.h" />
+		<Unit filename="include/ranges.h" />
 		<Unit filename="include/scalar.h" />
 		<Unit filename="include/traits.h" />
 		<Unit filename="test/main.cpp" />
