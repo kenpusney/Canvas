@@ -2,7 +2,7 @@
 CC=g++
 OBJS=obj/TestSuite.o
 TARGET=test/suite
-CFLAGS=-Iinclude -Wall -std=c++11
+CFLAGS=-Iinclude -Wall -std=c++11 -pg -g2
 RM=rm -rf
 
 

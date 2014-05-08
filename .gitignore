@@ -3,3 +3,7 @@
 
 *.exe
 *.o
+
+nbproject/private
+.gitigonre
+test/suite
