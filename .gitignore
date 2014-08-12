@@ -3,7 +3,8 @@
 
 *.exe
 *.o
-
-nbproject/private
-.gitigonre
+*.cpb
+*.layout
+*.depend
+nbproject/
 test/suite
