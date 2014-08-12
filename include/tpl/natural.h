@@ -119,71 +119,60 @@ namespace tpl
                 using value = Num1;
             };
 
-            template<class Num1, class Num2, class Acc = zero>
-            struct mul_impl
-            {
-                using value = typename mul_impl<
-                               Num1,
-                               typename Num2::pred,
-                               typename add<Acc, Num1>::value
-                               >::value;
-            };
-
-            template<class Num1, class Acc>
-            struct mul_impl<Num1, zero, Acc>
-            {
-                using value = Acc;
-            };
-
-
             template<class Num1, class Num2>
-            struct mul{
-                using value = typename mul_impl<Num1, Num2, zero>::value;
+            struct mul
+            {
+                using value = typename add<
+                                        typename mul<
+                                            Num1,
+                                            typename Num2::pred
+                                        >::value,Num1>::value;
             };
 
-            template<class Num1, class Num2, class Cmp = typename relation::ge<Num1,Num2>::value>
-            struct sub_impl{
-                using value = typename sub_impl<typename Num1::pred, typename Num2::pred, Cmp>::value;
+            template<class Num1>
+            struct mul<Num1, zero>
+            {
+                using value = zero;
+            };
+            using namespace tpl::boolean::logic;
+            template<class Num1, class Num2>
+            struct sub{
+                using value = typename $if<typename relation::ge<Num1,Num2>::value,
+                                        typename sub<typename Num1::pred, typename Num2::pred>::value,
+                                        zero>::value;
             };
             using namespace tpl::boolean::prim;
-            template<class Num1, class Num2>
-            struct sub_impl<Num1, Num2, $false>{
+            template<class Num1>
+            struct sub<zero, Num1>{
                 using value = undefined;
             };
             template<class Num1>
-            struct sub_impl<Num1, zero, $true>{
+            struct sub<Num1, zero>{
                 using value = Num1;
+            };template<>
+            struct sub<zero, zero>{
+                using value = zero;
             };
 
             template<class Num1, class Num2>
-            struct sub{
-                using value = typename sub_impl<Num1, Num2>::value;
+            struct div{
+                using value = typename $if<typename relation::ge<Num1, Num2>::value,
+                                            succ<typename div< typename sub<Num1, Num2>::value, Num2>::value >,
+                                            zero
+                                        >::value;
+                using rem = typename $if<typename relation::ge<Num1, Num2>::value,
+                                            typename div<typename sub<Num1,Num2>::value, Num2>::rem,
+                                            Num1>::value;
             };
-
-            template<class Num1, class Num2, class Acc = zero, class Cmp = typename relation::ge<Num1,Num2>::value>
-            struct div_impl{
-                using value = typename div_impl<Num1, Num2, Acc, Cmp>::value;
-                using rem = typename div_impl<Num1, Num2, Acc, Cmp>::rem;
-            };
-            template<class Num1, class Acc, class Cmp>
-            struct div_impl<Num1, zero, Acc, Cmp>{
+            template<class Num1>
+            struct div<Num1, zero>{
                 using value = undefined;       /// divide by zero
                 using rem = undefined;
             };
-            template<class Num1, class Num2, class Acc>
-            struct div_impl<Num1, Num2, Acc, $true>{
-                using value = typename div_impl<typename sub<Num1,Num2>::value, Num2, succ<Acc>>::value;
-                using rem = typename div_impl<typename sub<Num1,Num2>::value, Num2, succ<Acc>>::rem;
-            };
-            template<class Num1, class Num2, class Acc>
-            struct div_impl<Num1, Num2, Acc, $false>{
-                using value = Acc;
-                using rem = Num1;
-            };
-            template <class Num1, class Num2>
-            struct div{
-                using value = typename div_impl<Num1, Num2>::value;
-                using rem = typename div_impl<Num1, Num2>::rem;
+            template<class Num1>
+            struct div<zero, Num1>{
+                using value = zero;
+                using rem = zero;
             };
         }
         using namespace operators;

@@ -42,6 +42,19 @@ namespace tpl{
             struct $not<$false>{
                 using value = $true;
             };
+
+            template<class Cond, class Then, class Else>
+            struct $if{
+                using value = Then;
+            };
+            template<class Then, class Else>
+            struct $if<$false, Then, Else>{
+                using value = Else;
+            };
+            template<class Then, class Else>
+            struct $if<$true, Then, Else>{
+                using value = Then;
+            };
         }
         using namespace logic;
     }
