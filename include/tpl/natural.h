@@ -175,35 +175,23 @@ namespace tpl
                 using rem = zero;
             };
         }
-        using namespace operators;
 
         namespace operators /** max min */ {
             using namespace relation;
-            template<class Num1, class Num2, class Rel = typename le<Num1, Num2>::value>
+            template<class Num1, class Num2>
             struct min{
-                using value = typename min<Num1, Num2, Rel>::value;
+                using value = typename $if< typename le<Num1, Num2>::value,
+                                            Num1,
+                                            Num2>::value;
             };
             template<class Num1, class Num2>
-            struct min<Num1, Num2, $true>{
-                using value = Num1;
-            };
-            template<class Num1, class Num2>
-            struct min<Num1, Num2, $false>{
-                using value = Num2;
-            };
-            template<class Num1, class Num2, class Rel = typename ge<Num1, Num2>::value>
             struct max{
-                using value = typename max<Num1, Num2, Rel>::value;
-            };
-            template<class Num1, class Num2>
-            struct max<Num1, Num2, $true>{
-                using value = Num1;
-            };
-            template<class Num1, class Num2>
-            struct max<Num1, Num2, $false>{
-                using value = Num2;
+                using value = typename $if< typename ge<Num1, Num2>::value,
+                                            Num1,
+                                            Num2>::value;
             };
         }
+        using namespace operators;
 
         namespace prim /** five ten */ {
             using five = typename add<two,three>::value;

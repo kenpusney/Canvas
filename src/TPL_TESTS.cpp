@@ -35,9 +35,12 @@ TestCase(TPL_THE_TEMPLATE_PROGRAMMING_LIBRARY){
     /// decimal
     cout<<typeid(is_equal<decimal<one,one>::value,add<one,ten>::value>::value).name()<<endl;
     cout<<typeid(is_equal<decimal<one,zero,zero>::value, mul<ten,ten>::value>::value).name() << endl;
+
     cout<<typeid(is_equal<sub<three,one>::value, two>::value).name() << endl;
+    cout<<typeid(is_equal<sub<zero,zero>::value, zero>::value).name() << endl;
 
     ///  10 / 3 == 3 ... 1
+    cout<<typeid(eq<div<i2,i1>::value,i2>::value).name()<<endl;
     cout<<typeid(eq<div<i10,i3>::value,i3>::value).name()<<endl;
     cout<<typeid(eq<div<i10,i3>::rem,i1>::value).name()<<endl;
 
@@ -74,5 +77,13 @@ TestCase(TPL_THE_TEMPLATE_PROGRAMMING_LIBRARY){
     cout<<typeid(eq<
                         typename reduce<mul, i1, typename list<i1,i2,i3,i4>::value> :: value,
                         typename mul<i8, i3>::value
+                 >::value).name()<<endl;
+    cout<<typeid(eq<
+                        typename reduce<operators::max, i1, typename list<i1,i2,i3,i4>::value> :: value,
+                        i4
+                 >::value).name()<<endl;
+    cout<<typeid(eq<
+                        typename reduce<operators::min, i1, typename list<i0,i2,i3,i4>::value> :: value,
+                        i0
                  >::value).name()<<endl;
 }
