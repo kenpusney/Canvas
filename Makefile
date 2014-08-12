@@ -1,6 +1,6 @@
 
 CC=g++
-OBJS=obj/TestSuite.o
+OBJS=obj/TestSuite.o obj/TPL_TESTS.o
 TARGET=test/suite
 CFLAGS=-Iinclude -Wall -std=c++11 -pg -g2
 RM=rm -rf
