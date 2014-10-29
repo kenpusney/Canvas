@@ -3,7 +3,7 @@
 
 *.exe
 *.o
-*.cpb
+*.cbp
 *.layout
 *.depend
 nbproject/
