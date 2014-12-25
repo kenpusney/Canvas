@@ -6,7 +6,7 @@
  */
 
 #ifndef UNITTEST_H
-#define	UNITTEST_H
+#define UNITTEST_H
 
 #include <iostream>
 #include <string>

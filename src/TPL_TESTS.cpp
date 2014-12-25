@@ -1,9 +1,10 @@
 
 #include "tpl.h"
 #include "unittest.h"
+#include "tpl/debug.h"
+
 #include <typeinfo>
 #include <iostream>
-
 using namespace std;
 
 using namespace tpl::nat;
@@ -21,17 +22,25 @@ struct addone{
 
 TestCase(TPL_THE_TEMPLATE_PROGRAMMING_LIBRARY){
     /// equal
-    cout<<typeid(is_equal<one,one>::value).name()<<endl;
-    cout<<typeid(is_equal<one,two::pred>::value).name()<<endl;
+
+
+    AssertAll<
+            is_equal<one, one>::value,
+            is_equal<one, two::pred>::value,
+            is_equal<succ<one>, two>::value
+        >();
 
     /// add mul
-    cout<<typeid(is_equal<add<one, two>::value,three>::value).name()<<endl;
-    cout<<typeid(is_equal<mul<five, two>::value,ten>::value).name()<<endl;
+    AssertAll<
+            is_equal<add<one, two>::value, three>::value,
+            is_equal<mul<five, two>::value, ten>::value
+        >();
 
     /// less_than
-    cout<<typeid(is_less_than<mul<two,three>::value,add<two,five>::value>::value).name()<<endl;
-    cout<<typeid(is_less_equal<mul<two,three>::value,add<one,five>::value>::value).name()<<endl;
-
+    AssertAll<
+            is_less_than<mul<two,three>::value, add<two,five>::value>::value,
+            is_less_equal<mul<two, three>::value, add<one, five>::value>::value
+        >();
     /// decimal
     cout<<typeid(is_equal<decimal<one,one>::value,add<one,ten>::value>::value).name()<<endl;
     cout<<typeid(is_equal<decimal<one,zero,zero>::value, mul<ten,ten>::value>::value).name() << endl;

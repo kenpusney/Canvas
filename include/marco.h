@@ -10,6 +10,7 @@
 
 #include "marco/common.h"
 #include "marco/list.h"
+#include "marco/enum.h"
 
 #endif	/* MARCO_H */
 

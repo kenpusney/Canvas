@@ -7,6 +7,6 @@ using namespace collect::algo;
 using namespace collect::category;
 
 TestCase(TEST_LIST){
-    sequence<int> i;
-   foreach(i.begin(),i.end(),[](int& i){});
+//    sequence<int> i;
+//    foreach(i.begin(),i.end(),[](int& i){});
 }
