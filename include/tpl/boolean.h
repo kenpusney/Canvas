@@ -57,6 +57,18 @@ namespace tpl{
             };
         }
         using namespace logic;
+
+        namespace pred{
+            template<class A, class B>
+            struct same{
+                using value = $false;
+            };
+            template<class A>
+            struct same<A,A>{
+                using value = $true;
+            };
+        }
+        using namespace pred;
     }
 }
 

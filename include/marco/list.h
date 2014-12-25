@@ -1,6 +1,6 @@
-/* 
+/*
  * File:   list.h
- * Author: liuqing
+ * Author: KimmyLeo
  *
  * Created on 2014年5月26日, 下午6:01
  */

@@ -1,6 +1,6 @@
-/* 
+/*
  * File:   marco.h
- * Author: liuqing
+ * Author: Kimmy Leo
  *
  * Created on 2014年5月26日, 下午5:29
  */

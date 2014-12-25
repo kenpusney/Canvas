@@ -1,7 +1,7 @@
 
-#include "unittest.h"
-#include "collect/sequence.h"
-#include "collect/algo.h"
+#include "../include/unittest.h"
+#include "../include/collect/sequence.h"
+#include "../include/collect/algo.h"
 using namespace collect;
 using namespace collect::algo;
 using namespace collect::category;

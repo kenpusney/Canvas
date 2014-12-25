@@ -1,8 +1,8 @@
 
-#include "unittest.h"
-#include "tpl/debug.h"
+#include "../include/unittest.h"
+#include "../include/tpl/debug.h"
 
-#include "tpl/func.h"
+#include "../include/tpl/func.h"
 
 TestCase(tpl_func){
 

@@ -2,10 +2,10 @@
 #ifndef __TPL_FUNC_H__
 #define __TPL_FUNC_H__
 
-#include <tpl/natural.h>
+#include "natural.h"
 
 namespace tpl{
-    namespace func{
+    namespace func {
         namespace arg {
             template<class arg,class... args>
             struct arg_list{

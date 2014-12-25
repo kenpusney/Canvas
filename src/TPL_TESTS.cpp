@@ -1,7 +1,7 @@
 
-#include "tpl.h"
-#include "unittest.h"
-#include "tpl/debug.h"
+#include "../include/tpl.h"
+#include "../include/unittest.h"
+#include "../include/tpl/debug.h"
 
 #include <typeinfo>
 #include <iostream>
@@ -18,6 +18,8 @@ struct addone{
     using value = succ<Num>;
 };
 
+
+class A;
 
 
 TestCase(TPL_THE_TEMPLATE_PROGRAMMING_LIBRARY){
@@ -78,21 +80,21 @@ TestCase(TPL_THE_TEMPLATE_PROGRAMMING_LIBRARY){
                         typename list<i2,i3,i4>::value,
                         map<addone, typename list<i1,i2,i3>::value >::value
                     >::value).name() <<endl;
-    /// reduce
+    /// fold_left
     cout<<typeid(eq<
-                        typename reduce<add, i0, typename list<i1,i2,i3,i4>::value> :: value,
+                        typename fold_left<add, i0, typename list<i1,i2,i3,i4>::value> :: value,
                         i10
                  >::value).name()<<endl;
     cout<<typeid(eq<
-                        typename reduce<mul, i1, typename list<i1,i2,i3,i4>::value> :: value,
+                        typename fold_left<mul, i1, typename list<i1,i2,i3,i4>::value> :: value,
                         typename mul<i8, i3>::value
                  >::value).name()<<endl;
     cout<<typeid(eq<
-                        typename reduce<operators::max, i1, typename list<i1,i2,i3,i4>::value> :: value,
+                        typename fold_left<operators::max, i1, typename list<i1,i2,i3,i4>::value> :: value,
                         i4
                  >::value).name()<<endl;
     cout<<typeid(eq<
-                        typename reduce<operators::min, i1, typename list<i0,i2,i3,i4>::value> :: value,
+                        typename fold_left<operators::min, i1, typename list<i0,i2,i3,i4>::value> :: value,
                         i0
                  >::value).name()<<endl;
 }

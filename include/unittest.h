@@ -1,6 +1,6 @@
-/* 
+/*
  * File:   unittest.h
- * Author: liuqing
+ * Author: Kimmy Leo
  *
  * Created on 2014年4月22日, 上午11:16
  */

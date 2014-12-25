@@ -3,6 +3,7 @@
 #define __TPL_LIST_H__
 
 #include "natural.h"
+#include "boolean.h"
 
 namespace tpl{
     namespace list{
@@ -33,7 +34,7 @@ namespace tpl{
             template<class First>
             struct pair<First,nil>{
                 using first = First;
-                using rest = undefined;
+                using rest = nil;
                 using length = one;
             };
             template<class First = nil, class... Rest>
@@ -64,7 +65,7 @@ namespace tpl{
                 using length = typename value::length;
             };
             template<class List2>
-            struct concat<undefined, List2>{
+            struct concat<nil, List2>{
                 using value = List2;
                 using length = typename List2::length;
             };
@@ -109,32 +110,45 @@ namespace tpl{
         namespace iter
         /**
             map         (a -> b) -> [a] -> [b]
-            reduce      (b -> a -> b) -> b -> [a] -> b
+            fold_left   (b -> a -> b) -> b -> [a] -> b
+            find        (a -> boolean) -> [a] -> a
+
         */{
             template<template <class Elem> class Fn, class List>
             struct map{
                 using value = pair<
-                                typename Fn< typename List::first >::value,
+                                typename Fn<typename List::first>::value,
                                 typename map<Fn, typename List::rest >::value
                             >;
                 using length = typename value::length;
             };
             template<template <class Elem> class Fn>
-            struct map<Fn, undefined>{
+            struct map<Fn, nil>{
                 using value = nil;
                 using length = zero;
             };
             template<template <class Elem1, class Elem2> class Fn, class Init, class List>
-            struct reduce{
-                using value = typename reduce<
+            struct fold_left{
+                using value = typename fold_left<
                                     Fn,
                                     typename Fn<Init, typename List::first>::value,
                                     typename List::rest
                                 > :: value;
             };
             template<template <class Elem1, class Elem2> class Fn, class Init>
-            struct reduce<Fn, Init, undefined>{
+            struct fold_left<Fn, Init, nil>{
                 using value = Init;
+            };
+            template<template <class Elem1> class Pred, class List>
+            struct find{
+                using value = typename boolean::$if< typename Pred<typename List::first>::value,
+                                            typename List::first,
+                                            typename find<Pred, typename List::rest>::value>::value;
+            };
+
+            template<template <class Elem> class Pred>
+            struct find<Pred, nil>{
+                using value = undefined;
             };
         }
     }

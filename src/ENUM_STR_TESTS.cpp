@@ -1,7 +1,7 @@
 
-#include "utility.h"
-#include "unittest.h"
-#include "marco/enum.h"
+#include "../include/utility.h"
+#include "../include/unittest.h"
+#include "../include/marco/enum.h"
 #include <cstring>
 
 define_literal_enum( Token, FCK, GOOG, JMEI);

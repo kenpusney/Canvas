@@ -2,7 +2,7 @@
 #ifndef __MARCO_ENUM_H__
 #define __MARCO_ENUM_H__
 
-#include "marco/list.h"
+#include "list.h"
 
 #define __TOK_DICT(e) __##e##_dict
 

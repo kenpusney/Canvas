@@ -5,7 +5,7 @@
 #ifndef UNITTEST_H
 #include "../unittest.h"
 #endif
-#include "tpl/boolean.h"
+#include "boolean.h"
 #include <typeinfo>
 #include <iostream>
 
