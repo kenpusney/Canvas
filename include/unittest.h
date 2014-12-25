@@ -8,8 +8,7 @@
 #ifndef UNITTEST_H
 #define UNITTEST_H
 
-#include <iostream>
-#include <string>
+#include <stdio.h>
 
 #define TestCase(NAME)								\
 	extern void TEST_CASE_FUNCTION_##NAME(void);	\
@@ -18,14 +17,14 @@
 	public:											\
 		TEST_CASE_CLASS_##NAME()					\
 		{											\
-			std::cout << #NAME << std::endl;		\
+			printf("%s", #NAME);                	\
 			TEST_CASE_FUNCTION_##NAME();			\
 		}											\
 	} TEST_CASE_INSTANCE_##NAME;					\
 	void TEST_CASE_FUNCTION_##NAME(void)
 
 #define TestAssert(CONDITION) do{ if (!(CONDITION)) throw 0; } while (0)
-#define TestPrint(MESSAGE) std::cout << (MESSAGE) << std::endl;
+#define TestPrint(MESSAGE) printf("%s", MESSAGE);
 
 #define TestRunner() int main(){return 0;}
 

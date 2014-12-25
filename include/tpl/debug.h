@@ -12,7 +12,7 @@
 template<class T>
 struct AssertTrue{
     AssertTrue() {
-        std::cout << "FAILED at " << typeid(T).name() << std::endl;
+        TestPrint("Fail!");
         TestAssert(false);
     }
 };
