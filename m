@@ -69,7 +69,7 @@ task "BEFORE", sub {
 
 task "AFTER", sub {
     
-    block "clean";
+    block "clean", "push";
     open(my $fh, ">", ".build/mtime");
     while(my ($key, $value) = each %mtimes) {
         print $fh "$key=$value\n" if $key && $value;
@@ -123,6 +123,17 @@ task "test", sub {
 
 task "run", sub {
     system "./bin/$target";
+};
+
+task "commit", sub {
+
+    depends "clean";
+    
+    depends "test";
+    then "clean";
+    
+    system "git commit -p";
+    system "git push -u origin master";
 };
 
 ## execution;
