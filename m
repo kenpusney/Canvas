@@ -69,7 +69,7 @@ task "BEFORE", sub {
 
 task "AFTER", sub {
     
-    block "clean", "push";
+    block "clean", "commit";
     open(my $fh, ">", ".build/mtime");
     while(my ($key, $value) = each %mtimes) {
         print $fh "$key=$value\n" if $key && $value;
