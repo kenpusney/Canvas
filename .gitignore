@@ -1,10 +1,13 @@
 
 ####CPP
-
+**/.DS_Store
 *.exe
 *.o
 *.cbp
 *.layout
 *.depend
 nbproject/
-test/suite
+bin
+lib
+obj
+.build
