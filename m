@@ -111,9 +111,10 @@ task "build", sub {
     system "ar rc lib/libcanvas.a obj/src/*.o";
 };
 
-task "library", sub {
+task "lib", sub {
+	
 	depends "build";
-
+	
 	library "ropto";
 };
 
