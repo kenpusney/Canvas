@@ -47,7 +47,7 @@ sub compile {
     if (not exists($mtimes{$filename}) or $time != $mtimes{$filename}) {
         $mtimes{$filename} = $time;
         print "Compiling [\e[32;1m$filename\e[39;0m]\n";
-        system "clang++ -stdlib=libc++ -std=c++1y -Wall -c $filename -o obj/$filename.o";
+        system "clang++ -stdlib=libc++ -Iinclude -std=c++1z -Wall -c $filename -o obj/$filename.o";
     }
 }
 
