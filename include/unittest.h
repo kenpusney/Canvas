@@ -2,7 +2,6 @@
  * File:   unittest.h
  * Author: Kimmy Leo
  *
- * Created on 2014年4月22日, 上午11:16
  */
 
 #ifndef UNITTEST_H
@@ -17,7 +16,7 @@
 	public:											\
 		TEST_CASE_CLASS_##NAME()					\
 		{											\
-			printf("%s", #NAME);                	\
+			printf("%s\n", #NAME);                	\
 			TEST_CASE_FUNCTION_##NAME();			\
 		}											\
 	} TEST_CASE_INSTANCE_##NAME;					\

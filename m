@@ -51,6 +51,13 @@ sub compile {
     }
 }
 
+sub library {
+	my ($libname) = @_;
+
+	print "Building library [\e[32;1m$libname\e[39;0m]\n";
+	system "ar rc lib/lib$libname.a obj/src/$libname.*.o"
+}
+
 ## tasks;
 
 task "BEFORE", sub {
@@ -102,6 +109,12 @@ task "build", sub {
     }
     closedir $dh;
     system "ar rc lib/libcanvas.a obj/src/*.o";
+};
+
+task "library", sub {
+	depends "build";
+
+	library "ropto";
 };
 
 task "test", sub {
