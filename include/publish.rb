@@ -4,9 +4,10 @@ visited = {}
 
 cont = []
 
-file = ARGV[0]
+SOURCE = ARGV[0]
+DIST = ARGV[1] || "#{SOURCE}.pub.hpp"
 
-cont << file
+cont << SOURCE
 
 def visit(file, visited, cont)
     return if (visited.include? file)
@@ -37,7 +38,7 @@ def reorder(file, dependency)
                     .uniq
 end
 
-File.open("#{file}.public.hpp", 'w').write reorder(file, visited).map {|file|
+File.open(DIST, 'w').write reorder(SOURCE, visited).map {|file|
     puts file
 	"// File #{file}\n" + File.open(file).read
 }.map { |s|

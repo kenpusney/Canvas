@@ -11,4 +11,4 @@ bin
 lib
 obj
 .build
-*.public.hpp
+*.pub.hpp
