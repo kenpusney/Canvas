@@ -8,4 +8,6 @@
 
 #include "ropto/Base64.hpp"
 
+#include "ropto/Service.hpp"
+
 #endif

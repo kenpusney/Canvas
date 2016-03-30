@@ -2,7 +2,6 @@
  * File:   marco.h
  * Author: Kimmy Leo
  *
- * Created on 2014年5月26日, 下午5:29
  */
 
 #ifndef MARCO_H
