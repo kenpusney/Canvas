@@ -8,8 +8,6 @@
 
 namespace ropto
 {
-    struct dummy_t {};
-    
     template<class T, bool pod = std::is_pod<T>::value,
                       bool integral = std::is_integral<T>::value,
                       bool floating = std::is_floating_point<T>::value>
@@ -22,32 +20,27 @@ namespace ropto
     }
     
     template<class T>
-    dummy_t write(const T& value, byte_stream& stream)
+    void write(const T& value, byte_stream& stream)
     {
         serializer<T>::to_bytes(value, stream);
-        return {};
     }
     
     template<class T>
-    dummy_t read(T& value, byte_stream& stream)
+    void read(T& value, byte_stream& stream)
     {
         value = read<T>(stream);
-        return {};
     }
-    
-    template<class... Args>
-    void dummy(const Args&... dummy) {}
     
     template<class... Args>
     void write(byte_stream& stream,Args&... args)
     {
-        dummy(write(args, stream)...);
+        (stream << ... << args);
     }
     
     template<class... Args>
     void read(byte_stream& stream, Args&... args)
     {
-        dummy(read(args, stream)...);
+        (stream >> ... >> args);
     }
     
     template<class T>

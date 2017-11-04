@@ -12,3 +12,10 @@ lib
 obj
 .build
 *.pub.hpp
+
+CMakeFiles/
+
+Makefile
+CMakeCache.txt
+
+*.cmake

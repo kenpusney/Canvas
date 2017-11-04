@@ -27,7 +27,7 @@ struct department
 };
 
 template<>
-class serializer<employee>
+class ropto::serializer<employee>
 {
 public:
     static employee from_bytes(byte_stream& stream)
@@ -44,7 +44,7 @@ public:
 };
 
 template<>
-class serializer<department>
+class ropto::serializer<department>
 {
 public:
     static department from_bytes(byte_stream& stream)

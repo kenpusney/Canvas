@@ -4,6 +4,7 @@
 
 #include <iterator>
 #include <map>
+#include <algorithm>
 
 #include "BinaryRetriver.hpp"
 #include "Serializer.hpp"
